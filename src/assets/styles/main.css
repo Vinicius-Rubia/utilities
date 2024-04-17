@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.language-javascript {
+  @apply text-red-400;
+}
+
+.token.keyword {
+  @apply text-yellow-400;
+}
+
+.token.punctuation {
+  @apply text-zinc-600;
+}
+
+.token.string {
+  @apply text-[#C3E88D];
+}
+
+.token.operator {
+  @apply text-yellow-400;
+}
+
+.token.constant {
+  @apply text-indigo-400;
+}
+
+.token.literal-property.property {
+  @apply text-[#C792E9];
+}
+
+.token.function {
+  @apply text-indigo-400;
+}
+
+.token.function-variable.function {
+  @apply text-green-400;
+}
+
+.token.parameter {
+  @apply text-fuchsia-200;
+}
+
+.token.number {
+  @apply text-cyan-500;
+}
+
+.token.boolean {
+  @apply text-cyan-500;
+}
+
+
+
+
+
+.hljs {
+  @apply bg-transparent;
+  @apply text-foreground;
+}
+
+.hljs-property {
+  @apply text-indigo-400;
+}
+
+.hljs-function {
+  @apply text-indigo-400;
+}
+
+.hljs-params {
+  @apply text-amber-200;
+}
+
+/* 
+.hljs-keyword {
+  @apply text-[#C792E9];
+}
+
+.hljs-string {
+  @apply text-[#C3E88D];
+}
+
+.hljs-params {
+  @apply text-emerald-500;
+}
+
+.hljs-title.function_ {
+  @apply text-indigo-400;
+}
+
+.hljs-attr {
+  @apply text-yellow-400;
+}
+
+.hljs-title.class_ {
+  @apply text-yellow-400;
+}
+
+.hljs-number {
+  @apply text-orange-500;
+}
+
+.hljs-tag {
+  @apply text-indigo-400;
+}
+
+.hljs-name {
+  @apply text-indigo-400;
+}
+
+.hljs-literal {
+  @apply text-lime-500;
+}
+
+.hljs-built_in {
+  @apply text-cyan-300;
+}
+
+.hljs-function {
+  @apply text-fuchsia-300;
+} */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
