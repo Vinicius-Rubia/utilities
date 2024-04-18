@@ -1,20 +1,19 @@
-import { useToggle } from "@/hooks/useToggle";
 import { cn } from "@/lib/utils";
 import { CircleArrowLeft, Container } from "lucide-react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Command } from "./command";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 
 export const Header: React.FC = () => {
-  const { value, toggleValue } = useToggle(false);
+  const [ value, setValue ] = useState(false);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        toggleValue();
+        setValue((prev) => !prev);
       }
     };
 
@@ -38,7 +37,7 @@ export const Header: React.FC = () => {
         </Link>
       </nav>
 
-      <Command open={value} toggleValue={toggleValue} />
+      <Command open={value} setValue={setValue} />
 
       <div className="flex items-center gap-4">
         <Button
@@ -46,7 +45,7 @@ export const Header: React.FC = () => {
           className={cn(
             "relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-20"
           )}
-          onClick={() => toggleValue}
+          onClick={() => setValue(true)}
         >
           <span className="hidden lg:inline-flex">Procure na documentação</span>
           <span className="inline-flex lg:hidden mr-10">Procure...</span>

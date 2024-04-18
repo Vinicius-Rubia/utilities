@@ -14,19 +14,19 @@ import { useNavigate } from "react-router-dom";
 
 interface CommandProps {
   open: boolean;
-  toggleValue: () => void;
+  setValue: (value: boolean) => void;
 }
 
-export const Command: React.FC<CommandProps> = ({ open, toggleValue }) => {
+export const Command: React.FC<CommandProps> = ({ open, setValue }) => {
   const navigate = useNavigate();
 
   const handleNavigate = (id: string) => {
     navigate(`/utility/${id}`);
-    toggleValue();
+    setValue(!open);
   };
 
   return (
-    <CommandDialog open={open} onOpenChange={toggleValue}>
+    <CommandDialog open={open} onOpenChange={setValue}>
       <CommandInput placeholder="Procure pelo nome do utilitário" />
       <CommandList>
         <CommandEmpty>Nenhum resultado encontrado</CommandEmpty>
